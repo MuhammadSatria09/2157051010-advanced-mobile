@@ -73,7 +73,9 @@ class OnBoardingScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/SignUp');
+                          },
                           child: Text(
                             'Get Started',
                             style: TextStyle(
@@ -88,16 +90,20 @@ class OnBoardingScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 10.0),
-                    Text(
-                      'I already have an account',
-                      style: TextStyle(
-                        fontFamily: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w400,
-                        ).fontFamily,
-                        fontSize: 16.0,
-                        color: Colors.grey,
-                      ),
-                    ),
+                    TextButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/SignIn');
+                        },
+                        child: Text(
+                          'I already have an account',
+                          style: TextStyle(
+                            fontFamily: GoogleFonts.poppins(
+                              fontWeight: FontWeight.w400,
+                            ).fontFamily,
+                            fontSize: 16.0,
+                            color: Colors.grey,
+                          ),
+                        )),
                     const SizedBox(height: 16.0),
                   ],
                 ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:justduit/screens/onboarding.dart';
+import 'package:justduit/import.dart';
+import 'package:justduit/theme.dart';
 
 void main(List<String> args) => runApp(const MyApp());
 
@@ -8,12 +9,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = ThemeText.lightTheme();
     return MaterialApp(
-      title: 'Basic Widgets',
-      debugShowCheckedModeBanner: false,
-      theme:
-          ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.grey)),
-      home: const OnBoardingScreen(),
-    );
+        title: 'Justduit',
+        debugShowCheckedModeBanner: false,
+        theme: theme,
+        initialRoute: '/',
+        routes: {
+          '/': (context) => const OnBoardingScreen(),
+          '/SignUp': (context) => const SignUpScreen(),
+          '/SignIn': (context) => const SignInScreen(),
+        });
   }
 }
